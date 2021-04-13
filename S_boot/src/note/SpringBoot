@@ -1,0 +1,21 @@
+@SpringBootApplication
+    @SpringBootConfiguration
+    @EnableAutoConfiguration
+        @Import --> AutoConfigurationImportSelector
+
+    @ComponentScan
+
+================================================================================
+
+
+
+【SpringBoot如何加载Spring容器】
+    SpringApplication.run() 执行
+    1.读取配置类
+    refresh方法将类加载成BeanDefinition 并实例化
+
+
+【自动装配】通过SPI 机制实现的
+    Tomcat SPI 扫描 meta-inf/service + 接口全限定名 实现 List
+    Spring SPI 扫描 meta-inf/spring.factories
+
