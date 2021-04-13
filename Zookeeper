@@ -1,0 +1,23 @@
+https://www.bilibili.com/video/BV1Fp4y1k7sX?p=3&spm_id_from=pageDriver
+
+统一命名服务
+
+
+【ZAB协议】
+    1.领导选举机制
+    2.过半机制
+    3.
+    4.集群启动时候的数据同步
+
+
+【CAP】
+    Conisitency:一致性（强一致性）
+    Availability:可用性
+    Partition Tolerance:分区容错性
+
+
+【2PC】
+    预提交
+    收到ack
+    提交 commit
+

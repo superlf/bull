@@ -1,0 +1,91 @@
+
+读取配置类/扫描有用的类/注册为bean定义
+    BeanDefinitionReader
+    BeanDefinitionScanner
+    BeanDefinitionRegistry
+beanDefinition 放到BeanDefinitionMap中
+
+【Spring的扩展点】
+    BeanDefinition的扩展 （属于AC中实现的）
+        BeanFactoryPostProcessor 可修改Bean定义
+        BeanDefinitionRegistryPostProcessor 可注册Bean定义，比如集成MyBatis
+    BeanPostProcessor 共调用9次
+
+
+
+BeanFactory调用getBean生成bean
+    0.放入到map中
+    1.实例化为原始对象：反射 spring操作的 / 工厂方法 @Bean 自己去new实现
+    2.填充属性：
+    3.初始化：init方法/destroy方法;Bean生命周期的回调接口Aware方法
+    4.实现AOP：最后一个后置处理中实现的
+    5.放入单例池(一级缓存)中
+
+【AOP有两方式】
+    JDK动态代理/CGLIB
+
+
+
+BeanFactory 顶层核心接口 --使用了简单工厂模式
+
+
+
+
+
+
+-------------------------------------------------------------------------
+【Spring循环依赖】
+AService生命周期
+    0.createSet<aService>
+    1.实例化原始对象：
+        放入三级缓存<aService,lambda(原始对象,beanName,BeanDefinition)>
+    2.填充属性：
+        单例池找bService --> 创建bService
+    3.填充属性：
+    4.AOP：
+        @从二级缓存获取代理对象
+    5.添加到单例池
+
+BService生命周期
+    0.createSet<aService>
+    1.实例化原始对象：
+    2.填充属性：
+        单例池找aService --> 二级缓存找 --> 在createSet中 -->
+        从三级缓存获取执行Lambda --> AOP --> Aservice代理对象 --> 二级缓存
+    3.填充属性：
+    4.AOP：
+        @从二级缓存获取代理对象
+    5.添加到单例池
+
+-------------------------------------------------------------------------
+【ApplicationContext 和 BeanFactory 区别】
+BF只能生产bean，做bean之间的依赖；
+都有生产bean的能力，AC 实现了 BF的接口
+AC在BF的基础上提供了其他的功能，为了更好的服务
+实现了国际化/事件/管理bean的生命周期
+
+【BeanFactory 和 FactoryBean 区别】
+都是接口
+    BeanFactory 表示是工厂，管理Bean
+    FactoryBean 表示是Bean，可以生产对象的工厂Bean
+-------------------------------------------------------------------------
+【Spring 设计模式】
+    1.简单工厂
+        BeanFactory
+    2.工厂方法
+        FactoryBean
+    3.单例模式
+    4.适配器模式
+    5.装饰模式
+        FactoryBean
+    6.代理模式
+    7.观察者模式
+    8.策略模式
+    9.模板模式
+-------------------------------------------------------------------------
+【SpringBean的作用域】
+    1.singleton：在SpringIOC中只有一个实例；
+    2.prototype：在一个Bean定义中可以有多个实例；
+    3.request：
+    4.session：
+    5.global-session：
