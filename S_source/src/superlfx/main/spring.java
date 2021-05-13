@@ -10,9 +10,7 @@ public class spring {
         applicationContext.getBean("");
 
 
-
     }
-
 
 
 }
