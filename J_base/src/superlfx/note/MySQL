@@ -1,4 +1,17 @@
+【MVCC--多版本并发控制】
+    https://www.jianshu.com/p/8845ddca3b23
+    依赖记录3个隐式字段、undo日志、ReadView实现的;
+    三个隐式字段:事务ID、自增ID、回滚指针;
+    ReadView:快照读时候产生的读视图.
+        事务活跃ID列表、最大事务ID、最小事务ID
 
+【MySQL实现事务】
+    https://blog.csdn.net/justlpf/article/details/106838306?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-0&spm=1001.2101.3001.4242
+    https://blog.csdn.net/weixin_35750953/article/details/113490012
+    原子性通过undolog实现的,可以实现回滚
+    持久性通过redolog实现的,可以实现故障后修复
+    隔离性通过读写锁+MVCC实现的
+    一致性通过 原子性持久性隔离性共同实现的
 
 
 Mysql 存储引擎 不同存储的方式不同
