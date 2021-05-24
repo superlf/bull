@@ -68,3 +68,28 @@
     2.manifest文件中Main-Class指定运行java-jar的主程序
     3.通过JarLauncher加载BOOT-INF/classses目录及BOOT-INF/lib目录下的jar文件,实现了fat jar启动
     4.Start-Class中指定当前应用程序的执行类的入口。
+
+【SpringBoot源码分析】
+
+    1.创建并启动时间监控
+    2.初始化应用上下文
+    3.从Spring.factories中获取监听器并启用
+
+    4.初始化默认参数
+    5.构造容器环境
+    6.打印banner图形
+
+    8.创建Spring容器
+    9.准备容器
+    10.刷新容器
+    11.容器后置处理
+
+    12.停止计时
+    13.输出日志
+    14.发布上下文
+
+    15.执行Runner运行器
+
+
+
+

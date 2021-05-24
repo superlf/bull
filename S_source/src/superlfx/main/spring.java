@@ -6,10 +6,8 @@ public class spring {
 
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("");
-        applicationContext.getBean("");
-
-
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("/");
+//        Object bean = applicationContext.getBean("");
     }
 
 

@@ -1,4 +1,27 @@
 https://www.bilibili.com/video/av80404469/
 
 
+【cloud】
+    服务发现(服务注册中心)
+        Eureka
+        Nacos
+        Zookeeper
+        consul
+    远程服务调用基础
+        Ribbon
+        LoadBalancer
+    声明式远程服务调用
+        Feign
+        OpenFeign
+    熔断器/断路器(容错限流)
+        Hytrix
+        sentienl
+    网关
+        Zuul
+        GateWay
+    配置中心
+        Config + Bus
+        Nacos
+        Apollo
+
 

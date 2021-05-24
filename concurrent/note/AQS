@@ -1,0 +1,23 @@
+【ReentrantLock】
+    公平锁
+        acquire(1)
+            1.获取队列状态
+                队列为0,没有队列再CAS --> 加锁成功
+                队列执行线程相同 --> 加锁成功
+            acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+            2.生成Node节点加入队列
+            3.自旋、等待唤醒
+    非公平锁
+        先CAS获取锁
+        再 acquire(1)
+            1.获取队列状态
+                队列为0, CAS    --> 加锁成功
+                队列执行线程相同 --> 加锁成功
+            acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+            2.生成Node节点加入队列
+            3.自旋、等待唤醒
+
+
+【CountDownLauntch】
+
+
