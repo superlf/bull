@@ -1,0 +1,11 @@
+spring:
+  rabbitmq:
+    host: 192.168.61.128
+    port: 15672
+    username:  guest
+    password: guest
+    virtual-host: /superlfx
+
+
+
+

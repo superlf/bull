@@ -1,7 +1,38 @@
+Dubbo 中传输对象 Invocation 的属性
+    1.String interfaceName 接口名;
+    2.String methodName 方法名;
+    3.Class[] paramTypes 参数类型;
+    4.Object[] params 参数列表;
+
+
 Dubbo请求应用的流程
 
 
 Dubbo的负载均衡算法有哪些？原理
+    定义服务的时候：loadbalance,默认是随机
+    随机
+    轮询
+    一致性Hash
+        对参数进行Hash 然后和服务ID进行取模
+    最少活跃调用数
+        服务消费者缓存服务提供者对象信息 和 active
+        服务请求前判断active，如果相同则随机，否则用最小的+1，响应后-1；
+
+服务超时
+    服务端
+        抛出异常，消费端会默认尝试2次调用其他节点服务
+    消费端
+        抛出异常，调用的服务端仍会继续执行
+
+Dubbo可扩展SPI机制
+
+
+
+Dubbo 整合 Spring
+    一、@Service
+
+    二、@Refence
+
 
 
 
